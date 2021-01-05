@@ -45,56 +45,87 @@ public class SelectionAction {
         System.out.printf("\n ATTENTION!!! \n \n You can only choose six spells in total\n");
 
         for (int i = 0; i < 6; i++) {
-            System.out.println("Choose:\n\t  1 - Attacking Spells \n\t 2 - Healing Spells \n\t 3 - Recovery Spells");
-            typeSpellInput = keyboard.nextInt();
             boolean aux = true;
             while (aux) {
+                System.out.println("Choose:\n\t  1 - Attacking Spells \n\t 2 - Healing Spells \n\t 3 - Recovery Spells");
+                typeSpellInput = keyboard.nextInt();
                 switch (typeSpellInput) {
                     case 1: //attacking spells
-                        System.out.println("Choose one of the following attacking spells:");
-                        showAttackingSpells();
-                        System.out.println();
-                        System.out.print("Your choice: ");
-                        spellInput = keyboard.nextInt();
-                        while (!checkValidInput(spellInput, typeSpellInput, chosenSpells)) {
-                            System.out.print("You must choose a valid option, choose again: ");
-                            spellInput = keyboard.nextInt();
-                        }
-                        chosenSpells.add(pickAttackingSpell(spellInput));
-                        aux = false;
+                        choosingAttackingSpells(chosenSpells, typeSpellInput, keyboard, aux);
                         break;
+
                     case 2: //healing spells
-                        System.out.println("Choose one of the following healing spells:");
-                        showHealingSpells();
-                        System.out.println();
-                        System.out.print("Your choice: ");
-                        spellInput = keyboard.nextInt();
-                        while (!checkValidInput(spellInput, typeSpellInput, chosenSpells)) {
-                            System.out.print("You must choose a valid option, choose again: ");
-                            spellInput = keyboard.nextInt();
-                        }
-                        chosenSpells.add(pickHealingSpell(spellInput));
-                        aux = false;
+                        choosingHealingSpells(chosenSpells, typeSpellInput, keyboard, aux);
                         break;
+
                     case 3: //recovery spells
-                        System.out.println("Choose one of the following recovery spells:");
-                        showRecoverySpells();
-                        System.out.printf("\n\n Your choice: ");
-                        spellInput = keyboard.nextInt();
-                        while (!checkValidInput(spellInput, typeSpellInput, chosenSpells)) {
-                            System.out.print("You must choose a valid option, choose again: ");
-                            spellInput = keyboard.nextInt();
-                        }
-                        chosenSpells.add(pickRecoverySpell(spellInput));
-                        aux = false;
+                        choosingRecoverySpells(chosenSpells, typeSpellInput, keyboard, aux);
                         break;
+
                     default:
                         System.out.println("You must choose a valid option.");
-
                 }
             }
         }
         return chosenSpells;
+    }
+
+    private void choosingRecoverySpells(List<Spell> chosenSpells, int typeSpellInput, Scanner keyboard, boolean aux) {
+        System.out.println("Choose one of the following recovery spells:");
+        showRecoverySpells();
+        System.out.printf("\n\n Your choice: ");
+        Integer spellInput = keyboard.nextInt();
+        while (!checkValidInput(spellInput, typeSpellInput, chosenSpells)) {
+            System.out.print("You must choose a valid option, choose again, or insert 0 to choose another type of spell. \n Your choice: ");
+            spellInput = keyboard.nextInt();
+            if (spellInput == 0) {
+                aux = true;
+            }
+        }
+        if (spellInput != 0) {
+            chosenSpells.add(pickRecoverySpell(spellInput));
+            aux = false;
+        }
+    }
+
+    private void choosingHealingSpells(List<Spell> chosenSpells, int typeSpellInput, Scanner keyboard, boolean aux) {
+        System.out.println("Choose one of the following healing spells:");
+        showHealingSpells();
+        System.out.println();
+        System.out.print("Your choice: ");
+        Integer spellInput = keyboard.nextInt();
+        while (!checkValidInput(spellInput, typeSpellInput, chosenSpells)) {
+            System.out.print("You must choose a valid option, choose again, or insert 0 to choose another type of spell. \n Your choice: ");
+            spellInput = keyboard.nextInt();
+            if (spellInput == 0) {
+                aux = true;
+            }
+        }
+        if (spellInput != 0) {
+            chosenSpells.add(pickHealingSpell(spellInput));
+            aux = false;
+        }
+    }
+
+    private void choosingAttackingSpells(List<Spell> chosenSpells, int typeSpellInput, Scanner keyboard, boolean aux) {
+        System.out.println("Choose one of the following attacking spells:");
+        showAttackingSpells();
+        System.out.println();
+        System.out.print("Your choice: ");
+        Integer spellInput = keyboard.nextInt();
+
+        while (!checkValidInput(spellInput, typeSpellInput, chosenSpells)) {
+            System.out.print("You must choose a valid option, choose again, or insert 0 to choose another type of spell. \n Your choice: ");
+            spellInput = keyboard.nextInt();
+            if (spellInput == 0) {
+                aux = true;
+            }
+        }
+        if (spellInput != 0) {
+            chosenSpells.add(pickAttackingSpell(spellInput));
+            aux = false;
+        }
+
     }
 
     private Spell pickRecoverySpell(int id) {
@@ -109,14 +140,12 @@ public class SelectionAction {
     private void showRecoverySpells() {
         for (int i = 0; i < recoverySpells.size(); i++) {
             System.out.println(recoverySpells.get(i + 1));
-            System.out.println();
         }
     }
 
     private void showHealingSpells() {
         for (int i = 0; i < healingSpells.size(); i++) {
             System.out.println(healingSpells.get(i + 1));
-            System.out.println();
         }
     }
 
@@ -128,36 +157,33 @@ public class SelectionAction {
     public void showAttackingSpells() {
         for (int i = 0; i < attackingSpells.size(); i++) {
             System.out.println(attackingSpells.get(i + 1));
-            System.out.println();
         }
     }
 
 
     public boolean checkValidInput(int spellInput, int typeSpellInput, List<Spell> chosenSpells) {
-        if (inAValidRange(spellInput, typeSpellInput) && !wasChosen(chosenSpells, spellInput,typeSpellInput))
-            return true;
-        return false;
+        return (inAValidRange(spellInput, typeSpellInput) && !wasChosen(chosenSpells, spellInput, typeSpellInput));
     }
 
     public boolean wasChosen(List<Spell> chosenSpells, int spellInput, int typeSpellInput) {
         boolean auxInputs = false;
-        if (typeSpellInput == 1){
+        if (typeSpellInput == 1) {
             for (int i = 0; i < chosenSpells.size(); i++) {
-                if (chosenSpells.get(i) == chosenSpells.get(spellInput)) {
+                if (chosenSpells.get(i) == attackingSpells.get(spellInput)) {
                     auxInputs = true;
                 }
             }
         }
-        if (typeSpellInput == 2){
+        if (typeSpellInput == 2) {
             for (int i = 0; i < chosenSpells.size(); i++) {
-                if (chosenSpells.get(i+1) == chosenSpells.get(spellInput)) {
+                if (chosenSpells.get(i) == healingSpells.get(spellInput)) {
                     auxInputs = true;
                 }
             }
         }
-        if (typeSpellInput == 3){
+        if (typeSpellInput == 3) {
             for (int i = 0; i < chosenSpells.size(); i++) {
-                if (chosenSpells.get(i) == chosenSpells.get(spellInput)) {
+                if (chosenSpells.get(i) == recoverySpells.get(spellInput)) {
                     auxInputs = true;
                 }
             }
@@ -167,9 +193,9 @@ public class SelectionAction {
 
     public boolean inAValidRange(int spellInput, int typeSpellInput) {
         boolean aux = false;
-        if (typeSpellInput == 1 && spellInput >= 1 | spellInput <= 11)
+        if (typeSpellInput == 1 && spellInput >= 1 && spellInput <= 11)
             aux = true;
-        if (typeSpellInput == 2 && spellInput >= 1 | spellInput <= 7)
+        if (typeSpellInput == 2 && spellInput >= 1 && spellInput <= 7)
             aux = true;
         if (typeSpellInput == 3 && spellInput == 1)
             aux = true;
@@ -182,6 +208,7 @@ public class SelectionAction {
         int option;
         boolean aux = true;
         while (aux) {
+            aux = true;
             System.out.printf("Choose what type of character you want to be: \n\t 1 - Wizard \n\t 2 - Elf\n");
             System.out.print("Option: ");
             option = keyboard.nextInt();

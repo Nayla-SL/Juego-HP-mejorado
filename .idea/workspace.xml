@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="fb4303b4-4963-4c80-816a-465711127def" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/ar/com/ada/online/second/tp1/AttackSpell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ar/com/ada/online/second/tp1/AttackSpell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ar/com/ada/online/second/tp1/GameAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ar/com/ada/online/second/tp1/GameAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ar/com/ada/online/second/tp1/HealingSpell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ar/com/ada/online/second/tp1/HealingSpell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ar/com/ada/online/second/tp1/RecoverySpell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ar/com/ada/online/second/tp1/RecoverySpell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ar/com/ada/online/second/tp1/SelectionAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ar/com/ada/online/second/tp1/SelectionAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ar/com/ada/online/second/tp1/Spell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ar/com/ada/online/second/tp1/Spell.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1mcu8bWqGjhzrG711RYlB0v21yX" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.1150748" />
+    <property name="restartRequiresConfirmation" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ar.com.ada.online.second.tp1.Main" />
+      <module name="Juego-HP-mejorado" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ar.com.ada.online.second.tp1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fb4303b4-4963-4c80-816a-465711127def" name="Default Changelist" comment="" />
+      <created>1609805041941</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1609805041941</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1609806359296">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609806359296" />
+    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser" timestamp="1609807076407">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1609807076407" />
+    <state x="1414" y="123" key="#xdebugger.evaluate" timestamp="1609811032527">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1414" y="123" key="#xdebugger.evaluate/0.0.1920.1040@0.0.1920.1040" timestamp="1609811032527" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1609806274548">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1609806274548" />
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1609811398049">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1609811398049" />
+    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1609811398049">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1609811398049" />
+    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1609811398048">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1609811398048" />
+    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1609811398049">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1609811398049" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1609811398049">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1609811398049" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1609811398049">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1609811398049" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1609811398049">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1609811398049" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1609811398049">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1609811398049" />
+    <state x="440" y="94" key="SettingsEditor" timestamp="1609806841856">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1609806841856" />
+    <state x="666" y="277" key="refactoring.ChangeSignatureDialog" timestamp="1609811358353">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="666" y="277" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609811358353" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1609810631416">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1609810631416" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ar/com/ada/online/second/tp1/GameAction.java</url>
+          <line>137</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ar/com/ada/online/second/tp1/GameAction.java</url>
+          <line>75</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ar/com/ada/online/second/tp1/SelectionAction.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

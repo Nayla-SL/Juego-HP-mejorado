@@ -124,6 +124,30 @@ public class GameAction {
         }
     }
 
+//    private void throwAttackSpell(Character userPlaying, Character otherPlayer, Scanner keyboard) {
+//        int spellSelected;
+//        System.out.println("Choose one of the following spells:");
+//        for (int i = 0; i < 6; i++) {
+//            if (userPlaying.getSpells(i) instanceof AttackSpell) {
+//                System.out.println(userPlaying.getSpells(i));
+//            }
+//        }
+//        String locationOpponent;
+//        System.out.print("Your choice: ");
+//        spellSelected = keyboard.nextInt() - 1;
+//        AttackSpell attackSpell = (AttackSpell) userPlaying.spells.get(spellSelected);
+//        if (isMagicEnergyEnough(attackSpell, userPlaying)) {
+//            System.out.println("Choose the location you want to throw the spell to: ");
+//            locationOpponent = SelectionAction.locationSelection();
+//            if (locationOpponent == otherPlayer.getLocation()) {
+//                otherPlayer.setLifeSpan(otherPlayer.getLifeSpan() - attackSpell.getDamageMade());
+//                System.out.println("Great! You hit your target.");
+//            } else {
+//                System.out.println("Sorry, you didn't hit your target, better luck next time!");
+//            }
+//        }
+//    }
+
     private void throwAttackSpell(Character userPlaying, Character otherPlayer, Scanner keyboard) {
         int spellSelected;
         System.out.println("Choose one of the following spells:");
@@ -132,13 +156,13 @@ public class GameAction {
                 System.out.println(userPlaying.getSpells(i));
             }
         }
-        String locationOpponent;
         System.out.print("Your choice: ");
         spellSelected = keyboard.nextInt() - 1;
-        AttackSpell attackSpell = (AttackSpell) userPlaying.spells.get(spellSelected);
+        AttackSpell attackSpell = (AttackSpell) attackSpell.getId(spellSelected));
         if (isMagicEnergyEnough(attackSpell, userPlaying)) {
             System.out.println("Choose the location you want to throw the spell to: ");
-            locationOpponent = SelectionAction.locationSelection();
+
+           String locationOpponent = SelectionAction.locationSelection();
             if (locationOpponent == otherPlayer.getLocation()) {
                 otherPlayer.setLifeSpan(otherPlayer.getLifeSpan() - attackSpell.getDamageMade());
                 System.out.println("Great! You hit your target.");

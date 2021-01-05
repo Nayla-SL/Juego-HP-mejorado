@@ -45,10 +45,13 @@ public class Spell {
         this.magicEnergySpent = magicEnergySpent;
     }
 
+    public int getId() {
+        return id;
+    }
 
-
-
-
+    public void setId(int id) {
+        this.id = id;
+    }
 
     @Override
     public boolean equals(Object obj) {
@@ -56,7 +59,7 @@ public class Spell {
         if (obj == null || getClass() != obj.getClass()) return false;
         Spell that = (Spell) obj;
         return magicEnergySpent == that.magicEnergySpent &&
-                name.equals(that.name);
+                name == that.name && id == that.id;
     }
 
 
@@ -66,5 +69,7 @@ public class Spell {
                 "\n\t Magic energy spent: " + magicEnergySpent + "\n"
                 ;
     }
+
+
 }
 

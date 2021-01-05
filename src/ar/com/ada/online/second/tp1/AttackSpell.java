@@ -10,6 +10,7 @@ public class AttackSpell extends Spell {
     }
 
 
+
     //Getter & Setter
     public int getDamageMade() {
         return damageMade;
@@ -27,6 +28,14 @@ public class AttackSpell extends Spell {
         this.name = name;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId() {
+        this.id = id;
+    }
+
     @Override
     public void setMagicEnergySpent(int magicEnergySpent) {
         super.setMagicEnergySpent(magicEnergySpent);
@@ -40,10 +49,10 @@ public class AttackSpell extends Spell {
 
     @Override
     public String toString() {
-        return  id +
-                "\n\t name: " + name +
-                "\n\t damage made: " + damageMade +
-                "\n\t magic energy spent: " + magicEnergySpent + "\n";
+        return id + ") " +
+                "\t {name: " + name +
+                "}\t {damage made: " + damageMade +
+                "}\t magic energy spent: " + magicEnergySpent + "}\n";
     }
 }
 
