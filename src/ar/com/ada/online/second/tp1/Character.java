@@ -11,12 +11,13 @@ public abstract class Character {
     protected String typeOfCharacter;
     protected List<Spell> spells;
 
+    //------------------------------------------------------------------------------------------------------------------
 
     //constructor
     public Character() {
     }
 
-
+    //------------------------------------------------------------------------------------------------------------------
     //getters and setters
     public String getName() {
         return name;
@@ -66,6 +67,7 @@ public abstract class Character {
         this.spells = spells;
     }
 
+    //------------------------------------------------------------------------------------------------------------------
     //methods
 
     public boolean isAlive() {
@@ -81,7 +83,7 @@ public abstract class Character {
     public abstract void configSpells ();
 
 
-
+//------------------------------------------------------------------------------------------------------------------
 
     // Overrides
 

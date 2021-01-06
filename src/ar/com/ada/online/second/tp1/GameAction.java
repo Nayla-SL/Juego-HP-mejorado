@@ -6,6 +6,9 @@ public class GameAction {
 
     SelectionAction selectionAction = new SelectionAction();
 
+    //-----------------------------------------------------------------------------------------------------------------
+
+    //player 1 starts and chooses their attributes and spells
     public Character startPlayer1() {
         System.out.println("Player 1, you choose:");
         Character player1 = selectionAction.selectionPart();
@@ -14,6 +17,7 @@ public class GameAction {
 
     }
 
+    //player 2 starts and chooses their attributes and spells
     public Character startPlayer2() {
         System.out.println("Player 2, you choose:");
         Character player2 = selectionAction.selectionPart();
@@ -21,22 +25,26 @@ public class GameAction {
         return player2;
     }
 
+//-----------------------------------------------------------------------------------------------------------------
+
+    //the game starts, each player will choose what spell of their list they want to use - the spell will influence their attributes accordingly
     public void gamePlay(Character player1, Character player2) {
 
-            Scanner keyboard = new Scanner(System.in);
+        Scanner keyboard = new Scanner(System.in);
         while (player1.isAlive() || player2.isAlive()) {
             castSpell(player1, player2, keyboard);
             changeLocation(player1, keyboard);
-            characterStatus(player1);
+            playerCurrentStatus(player1);
         }
         while (player1.isAlive() || player2.isAlive()) {
             castSpell(player2, player1, keyboard);
             changeLocation(player2, keyboard);
-            characterStatus(player2);
+            playerCurrentStatus(player2);
         }
         winner(player1, player2);
     }
 
+    // shows who the winner is, the one that is left alive.
     private void winner(Character player1, Character player2) {
         if (player1.isAlive()) {
             System.out.println("Congratulations! " + player1.getName() + ", you won!!");
@@ -45,7 +53,7 @@ public class GameAction {
         }
     }
 
-
+    // asks the player if they want to change the location at the end of each turn
     private void changeLocation(Character userPlaying, Scanner keyboard) {
         int changeLocationUserInput;
         System.out.printf("Do you want to change your location? \n\t 1 - Yes \n\t 2 - No \n Your choice: ");
@@ -68,6 +76,7 @@ public class GameAction {
         }
     }
 
+    //lets the player choose which of their - previously chosen spells - wants to use in this turn.
     private void castSpell(Character userPlaying, Character otherPlayer, Scanner keyboard) {
 
         int typeSpellSelected;
@@ -77,14 +86,17 @@ public class GameAction {
         while (aux) {
             switch (typeSpellSelected) {
                 case 1:
+                    // throws an attacking spell to the opponent - if it hits them it will lower the life span of the opponent
                     throwAttackSpell(userPlaying, otherPlayer, keyboard);
                     aux = false;
                     break;
                 case 2:
+                    // adds points to the player's life span
                     throwHealingSpell(userPlaying, keyboard);
                     aux = false;
                     break;
                 case 3:
+                    // adds points to the player's magic energy status
                     throwRecoverySpell(userPlaying, keyboard);
                     aux = false;
                     break;
@@ -95,7 +107,9 @@ public class GameAction {
         }
     }
 
+//-----------------------------------------------------------------------------------------------------------------
 
+    // adds points to the player's magic energy status
     private void throwRecoverySpell(Character userPlaying, Scanner keyboard) {
         int spellSelected;
         System.out.println("Choose one of the following spells:");
@@ -114,6 +128,7 @@ public class GameAction {
         }
     }
 
+    // adds points to the player's life span
     private void throwHealingSpell(Character userPlaying, Scanner keyboard) {
         int spellSelected;
         System.out.println("Choose one of the following spells:");
@@ -132,6 +147,7 @@ public class GameAction {
         }
     }
 
+    // throws an attacking spell to the opponent - if it hits them it will lower the life span of the opponent
     private void throwAttackSpell(Character userPlaying, Character otherPlayer, Scanner keyboard) {
         int spellSelected;
         System.out.println("Choose one of the following spells:");
@@ -148,6 +164,8 @@ public class GameAction {
             if (spellUsed.getId() == spellSelected && spellUsed instanceof AttackSpell) {
                 AttackSpell attackSpell = (AttackSpell) spellUsed;
                 if (isMagicEnergyEnough(attackSpell, userPlaying)) {
+
+                    //ask the player for the location of the opponent - if it matches the location it will hurt the opponent
                     System.out.println("Choose the location you want to throw the spell to: ");
                     String locationOpponent = SelectionAction.locationSelection();
                     if (locationOpponent == otherPlayer.getLocation()) {
@@ -161,6 +179,9 @@ public class GameAction {
         }
     }
 
+    //-----------------------------------------------------------------------------------------------------------------
+
+    //checks if the player's magic energy is enough to throw the chosen spell
     private boolean isMagicEnergyEnough(Spell spell, Character userPlaying) {
         boolean auxME = true;
         if (userPlaying.getMagicEnergy() < spell.getMagicEnergySpent()) {
@@ -175,7 +196,8 @@ public class GameAction {
         return auxME;
     }
 
-    public String characterStatus(Character userPlaying) {
+    //shows the current status to the player at the end of the turn
+    public String playerCurrentStatus(Character userPlaying) {
         String output = String.format(
                 "Here's your status: \n\t Name: %d \n\t Location: %s \n\t Life span: %d \n\t Magic energy: %d \n",
                 userPlaying.getName(),

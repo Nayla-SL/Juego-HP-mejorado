@@ -9,7 +9,7 @@ public class SelectionAction {
     Map<Integer, Spell> healingSpells;
     Map<Integer, Spell> recoverySpells;
 
-    // spells map
+    // map for every type of spells
     public SelectionAction() {
         attackingSpells = new HashMap<>();
         healingSpells = new HashMap<>();
@@ -35,10 +35,10 @@ public class SelectionAction {
         recoverySpells.put(1, new RecoverySpell(1, "RECUPERA", 8, 15));
     }
 
+    //fills the list of 6 spells every player has to choose
     public List<Spell> spellsSelection() {
         Scanner keyboard = new Scanner(System.in);
         int typeSpellInput;
-        int spellInput;
         List<Spell> chosenSpells = new ArrayList<>();
 
 
@@ -73,6 +73,9 @@ public class SelectionAction {
         return chosenSpells;
     }
 
+    // -----------------------------------------------------------------------------------------------------------------
+
+    //shows every recovery spell available and let's the player choose one spell
     private void choosingRecoverySpells(List<Spell> chosenSpells, int typeSpellInput, Scanner keyboard, boolean aux) {
         System.out.println("Choose one of the following recovery spells:");
         showRecoverySpells();
@@ -91,6 +94,7 @@ public class SelectionAction {
         }
     }
 
+    //shows every healing spell available and let's the player choose one spell
     private void choosingHealingSpells(List<Spell> chosenSpells, int typeSpellInput, Scanner keyboard, boolean aux) {
         System.out.println("Choose one of the following healing spells:");
         showHealingSpells();
@@ -110,6 +114,7 @@ public class SelectionAction {
         }
     }
 
+    //shows every attacking spell available and let's the player choose one spell
     private boolean choosingAttackingSpells(List<Spell> chosenSpells, int typeSpellInput, Scanner keyboard, boolean aux) {
         System.out.println("Choose one of the following attacking spells:");
         showAttackingSpells();
@@ -128,14 +133,16 @@ public class SelectionAction {
             chosenSpells.add(pickAttackingSpell(spellInput));
             aux = false;
         }
-      return aux;
+        return aux;
 
     }
+
+    // -----------------------------------------------------------------------------------------------------------------
+    //this methods will return the chosen spell by ID
 
     public Spell pickAttackingSpell(Integer id) {
         return attackingSpells.get(id);
     }
-
 
     private Spell pickRecoverySpell(int id) {
         return recoverySpells.get(id);
@@ -146,11 +153,15 @@ public class SelectionAction {
     }
 
 
+    // -----------------------------------------------------------------------------------------------------------------
+    // this methods will show every spell in the list available to be chosen, separated by type of spell
+
     private void showRecoverySpells() {
         for (int i = 0; i < recoverySpells.size(); i++) {
             System.out.println(recoverySpells.get(i + 1));
         }
     }
+
 
     private void showHealingSpells() {
         for (int i = 0; i < healingSpells.size(); i++) {
@@ -159,19 +170,21 @@ public class SelectionAction {
     }
 
 
-
-
     public void showAttackingSpells() {
         for (int i = 0; i < attackingSpells.size(); i++) {
             System.out.println(attackingSpells.get(i + 1));
         }
     }
 
+    // -----------------------------------------------------------------------------------------------------------------
 
+
+    //checks if the spell chosen by the player is valid (if it exists and if wasn't chosen before by them)
     public boolean checkValidInput(int spellInput, int typeSpellInput, List<Spell> chosenSpells) {
         return (inAValidRange(spellInput, typeSpellInput) && !wasChosen(chosenSpells, spellInput, typeSpellInput));
     }
 
+    // checks if the spell is already in the list of the chosen spells for each player
     public boolean wasChosen(List<Spell> chosenSpells, int spellInput, int typeSpellInput) {
         boolean auxInputs = false;
         if (typeSpellInput == 1) {
@@ -198,18 +211,27 @@ public class SelectionAction {
         return auxInputs;
     }
 
+    //checks if the spell selected exists
     public boolean inAValidRange(int spellInput, int typeSpellInput) {
         boolean aux = false;
+        //if it is an attacking spell, checks the range
         if (typeSpellInput == 1 && spellInput >= 1 && spellInput <= 11)
             aux = true;
+
+        //if it is an healing spell, checks the range
         if (typeSpellInput == 2 && spellInput >= 1 && spellInput <= 7)
             aux = true;
+
+        //if it is an recovery spell, checks the range
         if (typeSpellInput == 3 && spellInput == 1)
             aux = true;
         return aux;
     }
 
+    // -----------------------------------------------------------------------------------------------------------------
 
+
+    //start of the game, each player will choose what type of character they want to be, every attribute and spells
     public Character selectionPart() {
         Scanner keyboard = new Scanner(System.in);
         int option;
@@ -217,15 +239,15 @@ public class SelectionAction {
         while (aux) {
             aux = true;
             System.out.printf("Choose what type of character you want to be: \n\t 1 - Wizard \n\t 2 - Elf\n");
-            System.out.print("Option: ");
+            System.out.print("Your choice: ");
             option = keyboard.nextInt();
             switch (option) {
                 case 1:
                     aux = false;
-                    return new Wizard();// devuelve el mago con todas las selecciones del jugador
+                    return new Wizard();// returns wizard with every choice from the player
                 case 2:
                     aux = false;
-                    return new Elf(); //devuelve el elfo con todas las selecciones del jugador
+                    return new Elf(); // returns elf with every choice from the player
                 default:
                     System.out.println("You must choose a valid option.");
             }
@@ -233,7 +255,7 @@ public class SelectionAction {
         return null;
     }
 
-
+    //selects a location, for your player or where you want to throw the spell to.
     public static String locationSelection() {
         boolean aux = true;
         String auxLoc;

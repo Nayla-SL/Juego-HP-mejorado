@@ -7,15 +7,13 @@ public class Spell {
     protected int id;
     protected String name;
 
-    // Constructor
-
+    // Constructors
 
     public Spell(int magicEnergySpent, int id, String name) {
         this.magicEnergySpent = magicEnergySpent;
         this.id = id;
         this.name = name;
     }
-
 
     public Spell() {
 
@@ -27,9 +25,9 @@ public class Spell {
         this.magicEnergySpent = magicEnergySpent;
     }
 
+//-----------------------------------------------------------------------------------------------------------------
 
-    //Getter & Setter
-
+    //Getters & Setters
 
     public String getName() {
         return name;
@@ -54,6 +52,10 @@ public class Spell {
     public void setId(int id) {
         this.id = id;
     }
+
+    //-----------------------------------------------------------------------------------------------------------------
+
+    //Overrides
 
     @Override
     public boolean equals(Object obj) {

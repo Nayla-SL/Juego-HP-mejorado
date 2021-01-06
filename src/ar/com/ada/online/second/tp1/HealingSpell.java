@@ -3,6 +3,8 @@ package ar.com.ada.online.second.tp1;
 public class HealingSpell extends Spell {
     private int lifeRecovered;
 
+
+    //------------------------------------------------------------------------------------------------------------------
     // Constructor
     public HealingSpell(int id, String name, int magicEnergySpent, int lifeRecovered) {
         super(id, name, magicEnergySpent);
@@ -10,6 +12,7 @@ public class HealingSpell extends Spell {
     }
 
 
+    //------------------------------------------------------------------------------------------------------------------
     // Getters & Setters
     public int getLifeRecovered() {
         return lifeRecovered;
@@ -27,6 +30,10 @@ public class HealingSpell extends Spell {
         this.name = name;
     }
 
+
+    //------------------------------------------------------------------------------------------------------------------
+    //Override
+
     @Override
     public void setMagicEnergySpent(int magicEnergySpent) {
         super.setMagicEnergySpent(magicEnergySpent);
@@ -39,7 +46,7 @@ public class HealingSpell extends Spell {
 
     @Override
     public String toString() {
-        return "Healing Spell: \t\t{id: "+  id  +
+        return "Healing Spell: \t\t{id: " + id +
                 "}\t {name: " + name +
                 "}\t {life recovered: " + lifeRecovered +
                 "}\t magic energy spent: " + magicEnergySpent + "}";

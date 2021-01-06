@@ -9,8 +9,9 @@ public class RecoverySpell extends Spell {
         this.energyRecovered = energyRecovered;
     }
 
+//------------------------------------------------------------------------------------------------------------------
 
-    //Getter & Setter
+    //Getters & Setters
     public int getEnergyRecovered() {
         return energyRecovered;
     }
@@ -27,6 +28,8 @@ public class RecoverySpell extends Spell {
         this.name = name;
     }
 
+    //------------------------------------------------------------------------------------------------------------------
+    //Overrides
     @Override
     public void setMagicEnergySpent(int magicEnergySpent) {
         super.setMagicEnergySpent(magicEnergySpent);

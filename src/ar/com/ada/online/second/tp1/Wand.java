@@ -5,6 +5,9 @@ public class Wand {
     private String name;
 
 
+    //------------------------------------------------------------------------------------------------------------------
+    //Constructors
+
     public Wand(int points, String name) {
         this.points = points;
         this.name = name;
@@ -13,6 +16,8 @@ public class Wand {
     public Wand(){}
 
 
+    //------------------------------------------------------------------------------------------------------------------
+    //Getters and Setters
 
     public int getPoints() {
         return points;
@@ -30,6 +35,8 @@ public class Wand {
         this.name = name;
     }
 
+    //------------------------------------------------------------------------------------------------------------------
+    //Overrides
 
     @Override
     public String toString() {

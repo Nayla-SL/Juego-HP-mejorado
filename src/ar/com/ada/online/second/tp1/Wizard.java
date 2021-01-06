@@ -10,6 +10,7 @@ public class Wizard extends Character {
     SelectionAction selectionAction = new SelectionAction();
     Spell spell = new Spell();
 
+    //the player chooses each attribute to start the game
     public Wizard() {
         Scanner keyboard = new Scanner(System.in);
         System.out.print("Choose and type your name: ");
@@ -18,6 +19,7 @@ public class Wizard extends Character {
         this.setLocation(selectionAction.locationSelection());
         System.out.println("");
         this.setTypeOfCharacter("Wizard");
+        //the wand will be selected randomly for each player
         this.setWand(wandGenerator());
         this.setSpells(selectionAction.spellsSelection());
         this.isDark();
@@ -29,8 +31,8 @@ public class Wizard extends Character {
 
     }
 
+    //-----------------------------------------------------------------------------------------------------------------
     // getters and setters
-
 
     public Wand getWand() {
         return wand;
@@ -72,7 +74,6 @@ public class Wizard extends Character {
         this.magicEnergy = magicEnergy;
     }
 
-
     public String getTypeOfCharacter() {
         return typeOfCharacter;
     }
@@ -89,8 +90,11 @@ public class Wizard extends Character {
         this.darkWizard = darkWizard;
     }
 
+
+    //-----------------------------------------------------------------------------------------------------------------
     // Methods
 
+    // if the player chose more than 3 attacking spells, it is a dark wizard, if not it's a white wizard
     public void isDark() {
         int counterAttackSpells = 0;
         for (int i = 0; i < this.spells.size(); i++) {
@@ -121,6 +125,8 @@ public class Wizard extends Character {
         return PlayerWand;
     }
 
+    //------------------------------------------------------------------------------------------------------------------
+    //configures every spell taking into account the type of wizard the player is (according to how many attacking spells the player has chosen)
     public void darkWizardSpellsConfig() {
         for (int i = 0; i < this.spells.size(); i++) {
             if (this.spells.get(i) instanceof AttackSpell) {
@@ -146,6 +152,8 @@ public class Wizard extends Character {
             }
         }
     }
+
+//------------------------------------------------------------------------------------------------------------------
 
     // Overrides
 

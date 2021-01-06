@@ -8,9 +8,9 @@ public class Elf extends Character {
 
     SelectionAction selectionAction = new SelectionAction();
 
+    //the player chooses each attribute to start the game
     public Elf() {
         Scanner keyboard = new Scanner(System.in);
-        // selecciona nombre
         System.out.println("Choose and type your name: ");
         this.setName(keyboard.next());
         this.setLocation(selectionAction.locationSelection());
@@ -32,6 +32,7 @@ public class Elf extends Character {
     }
 
 
+    //if the player has chosen more than 3 attacking spells, it becomes a free elf, if not, it becomes a house elf.
     public void isFree() {
         int counterAttackSpells = 0;
         for (int i = 0; i < this.spells.size(); i++) {
@@ -40,7 +41,9 @@ public class Elf extends Character {
         }
         freeElf = (counterAttackSpells > 3);
     }
+    //-----------------------------------------------------------------------------------------------------------------
 
+    //configures every spell taking into account the type of elf the player is (according to how many attacking spells the player has chosen)
     public void freeElfSpellsConfig() {
         for (int i = 0; i < this.spells.size(); i++) {
             if (this.spells.get(i) instanceof AttackSpell) {
@@ -67,6 +70,7 @@ public class Elf extends Character {
         }
     }
 
+    //------------------------------------------------------------------------------------------------------------------
     // Overrides
 
     @Override
