@@ -39,9 +39,9 @@ public class HealingSpell extends Spell {
 
     @Override
     public String toString() {
-        return id +
-                ")\t {name: " + name +
+        return "Healing Spell: \t\t{id: "+  id  +
+                "}\t {name: " + name +
                 "}\t {life recovered: " + lifeRecovered +
-                "}\t magic energy spent: " + magicEnergySpent + "}\n";
+                "}\t magic energy spent: " + magicEnergySpent + "}";
     }
 }

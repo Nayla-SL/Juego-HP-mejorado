@@ -110,7 +110,7 @@ public class Elf extends Character {
                 freeElf);
         String spellsTxt = "\n";
         for (int i = 0; i < spells.size(); i++) {
-            spellsTxt = "\t" + spellsTxt + (i + 1) + ") " + spells.get(i).toString() + "\n";
+            spellsTxt = spellsTxt + spells.get(i).toString() + "\n";
         }
         output = output + spellsTxt;
         return output;

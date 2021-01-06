@@ -14,7 +14,7 @@ public class GameAction {
 
     }
 
-    public Character startPlayer2 () {
+    public Character startPlayer2() {
         System.out.println("Player 2, you choose:");
         Character player2 = selectionAction.selectionPart();
         System.out.println("Player 2 information: \n" + player2);
@@ -22,22 +22,25 @@ public class GameAction {
     }
 
     public void gamePlay(Character player1, Character player2) {
-       while (player1.isAlive() || player2.isAlive()) {
-           Scanner keyboard = new Scanner(System.in);
-           castSpell(player1, player2, keyboard);
-           changeLocation(player1, keyboard);
-           characterStatus(player1);
-           castSpell(player2, player1, keyboard);
-           changeLocation(player2, keyboard);
-           characterStatus(player2);
-       }
-       winner(player1, player2);
+
+            Scanner keyboard = new Scanner(System.in);
+        while (player1.isAlive() || player2.isAlive()) {
+            castSpell(player1, player2, keyboard);
+            changeLocation(player1, keyboard);
+            characterStatus(player1);
+        }
+        while (player1.isAlive() || player2.isAlive()) {
+            castSpell(player2, player1, keyboard);
+            changeLocation(player2, keyboard);
+            characterStatus(player2);
+        }
+        winner(player1, player2);
     }
 
     private void winner(Character player1, Character player2) {
-        if (player1.isAlive()){
+        if (player1.isAlive()) {
             System.out.println("Congratulations! " + player1.getName() + ", you won!!");
-        } else  {
+        } else {
             System.out.println("Congratulations! " + player2.getName() + ", you won!!");
         }
     }
@@ -53,40 +56,45 @@ public class GameAction {
                 case 1:
                     userPlaying.setLocation(SelectionAction.locationSelection());
                     aux = false;
+                    break;
                 case 2:
-                    aux = true;
+                    aux = false;
+                    break;
                 default:
+                    System.out.println("You must choose a valid option. Choose again: ");
                     aux = true;
+                    break;
             }
-
-
         }
     }
 
     private void castSpell(Character userPlaying, Character otherPlayer, Scanner keyboard) {
 
         int typeSpellSelected;
-        while (userPlaying.isAlive()) {
-            boolean aux = true;
-            System.out.print("What do you want to do? \n\t 1 - Attack \n\t 2 - Heal \n\t 3 - Recover Magic Energy");
-            typeSpellSelected = keyboard.nextInt();
-            while (aux) {
-                switch (typeSpellSelected) {
-                    case 1:
-                        throwAttackSpell(userPlaying, otherPlayer, keyboard);
-                        aux = false;
-                    case 2:
-                        throwHealingSpell(userPlaying, keyboard);
-                        aux = false;
-                    case 3:
-                        throwRecoverySpell(userPlaying, keyboard);
-                        aux = false;
-                    default:
-                        System.out.println("You must choose a valid option.");
-                }
+        boolean aux = true;
+        System.out.print("What do you want to do? \n\t 1 - Attack \n\t 2 - Heal \n\t 3 - Recover Magic Energy\n Your choice: ");
+        typeSpellSelected = keyboard.nextInt();
+        while (aux) {
+            switch (typeSpellSelected) {
+                case 1:
+                    throwAttackSpell(userPlaying, otherPlayer, keyboard);
+                    aux = false;
+                    break;
+                case 2:
+                    throwHealingSpell(userPlaying, keyboard);
+                    aux = false;
+                    break;
+                case 3:
+                    throwRecoverySpell(userPlaying, keyboard);
+                    aux = false;
+                    break;
+                default:
+                    System.out.println("You must choose a valid option.");
+                    break;
             }
         }
     }
+
 
     private void throwRecoverySpell(Character userPlaying, Scanner keyboard) {
         int spellSelected;
@@ -124,50 +132,31 @@ public class GameAction {
         }
     }
 
-//    private void throwAttackSpell(Character userPlaying, Character otherPlayer, Scanner keyboard) {
-//        int spellSelected;
-//        System.out.println("Choose one of the following spells:");
-//        for (int i = 0; i < 6; i++) {
-//            if (userPlaying.getSpells(i) instanceof AttackSpell) {
-//                System.out.println(userPlaying.getSpells(i));
-//            }
-//        }
-//        String locationOpponent;
-//        System.out.print("Your choice: ");
-//        spellSelected = keyboard.nextInt() - 1;
-//        AttackSpell attackSpell = (AttackSpell) userPlaying.spells.get(spellSelected);
-//        if (isMagicEnergyEnough(attackSpell, userPlaying)) {
-//            System.out.println("Choose the location you want to throw the spell to: ");
-//            locationOpponent = SelectionAction.locationSelection();
-//            if (locationOpponent == otherPlayer.getLocation()) {
-//                otherPlayer.setLifeSpan(otherPlayer.getLifeSpan() - attackSpell.getDamageMade());
-//                System.out.println("Great! You hit your target.");
-//            } else {
-//                System.out.println("Sorry, you didn't hit your target, better luck next time!");
-//            }
-//        }
-//    }
-
     private void throwAttackSpell(Character userPlaying, Character otherPlayer, Scanner keyboard) {
         int spellSelected;
         System.out.println("Choose one of the following spells:");
         for (int i = 0; i < 6; i++) {
-            if (userPlaying.getSpells(i) instanceof AttackSpell) {
-                System.out.println(userPlaying.getSpells(i));
+            if (userPlaying.spells.get(i) instanceof AttackSpell) {
+                System.out.println(userPlaying.spells.get(i));
             }
         }
         System.out.print("Your choice: ");
-        spellSelected = keyboard.nextInt() - 1;
-        AttackSpell attackSpell = (AttackSpell) attackSpell.getId(spellSelected));
-        if (isMagicEnergyEnough(attackSpell, userPlaying)) {
-            System.out.println("Choose the location you want to throw the spell to: ");
+        spellSelected = keyboard.nextInt();
 
-           String locationOpponent = SelectionAction.locationSelection();
-            if (locationOpponent == otherPlayer.getLocation()) {
-                otherPlayer.setLifeSpan(otherPlayer.getLifeSpan() - attackSpell.getDamageMade());
-                System.out.println("Great! You hit your target.");
-            } else {
-                System.out.println("Sorry, you didn't hit your target, better luck next time!");
+        for (int i = 0; i < userPlaying.spells.size(); i++) {
+            Spell spellUsed = userPlaying.spells.get(i);
+            if (spellUsed.getId() == spellSelected && spellUsed instanceof AttackSpell) {
+                AttackSpell attackSpell = (AttackSpell) spellUsed;
+                if (isMagicEnergyEnough(attackSpell, userPlaying)) {
+                    System.out.println("Choose the location you want to throw the spell to: ");
+                    String locationOpponent = SelectionAction.locationSelection();
+                    if (locationOpponent == otherPlayer.getLocation()) {
+                        otherPlayer.setLifeSpan(otherPlayer.getLifeSpan() - attackSpell.getDamageMade());
+                        System.out.println("Great! You hit your target.");
+                    } else {
+                        System.out.println("Sorry, you didn't hit your target, better luck next time!");
+                    }
+                }
             }
         }
     }

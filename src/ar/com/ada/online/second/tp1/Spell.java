@@ -9,11 +9,13 @@ public class Spell {
 
     // Constructor
 
-    public Spell(String name, int magicEnergySpent) {
+
+    public Spell(int magicEnergySpent, int id, String name) {
+        this.magicEnergySpent = magicEnergySpent;
         this.id = id;
         this.name = name;
-        this.magicEnergySpent = magicEnergySpent;
     }
+
 
     public Spell() {
 
@@ -65,8 +67,9 @@ public class Spell {
 
     @Override
     public String toString() {
-        return id + "\n\t name: " + name +
-                "\n\t Magic energy spent: " + magicEnergySpent + "\n"
+        return  "{id: "+
+                id + "}\t {name: " + name +
+                "}\t {Magic energy spent: " + magicEnergySpent + "}\n"
                 ;
     }
 

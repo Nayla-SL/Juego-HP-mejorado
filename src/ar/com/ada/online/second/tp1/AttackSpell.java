@@ -49,11 +49,13 @@ public class AttackSpell extends Spell {
 
     @Override
     public String toString() {
-        return id + ") " +
-                "\t {name: " + name +
+        return  "Attacking Spell: \t{id: "+  id  +
+                "}\t {name: " + name +
                 "}\t {damage made: " + damageMade +
-                "}\t magic energy spent: " + magicEnergySpent + "}\n";
+                "}\t {magic energy spent: " + magicEnergySpent + "}";
     }
+
+
 }
 
 

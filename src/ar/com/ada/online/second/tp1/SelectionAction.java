@@ -52,14 +52,17 @@ public class SelectionAction {
                 switch (typeSpellInput) {
                     case 1: //attacking spells
                         choosingAttackingSpells(chosenSpells, typeSpellInput, keyboard, aux);
+                        aux = false;
                         break;
 
                     case 2: //healing spells
                         choosingHealingSpells(chosenSpells, typeSpellInput, keyboard, aux);
+                        aux = false;
                         break;
 
                     case 3: //recovery spells
                         choosingRecoverySpells(chosenSpells, typeSpellInput, keyboard, aux);
+                        aux = false;
                         break;
 
                     default:
@@ -107,7 +110,7 @@ public class SelectionAction {
         }
     }
 
-    private void choosingAttackingSpells(List<Spell> chosenSpells, int typeSpellInput, Scanner keyboard, boolean aux) {
+    private boolean choosingAttackingSpells(List<Spell> chosenSpells, int typeSpellInput, Scanner keyboard, boolean aux) {
         System.out.println("Choose one of the following attacking spells:");
         showAttackingSpells();
         System.out.println();
@@ -125,8 +128,14 @@ public class SelectionAction {
             chosenSpells.add(pickAttackingSpell(spellInput));
             aux = false;
         }
+      return aux;
 
     }
+
+    public Spell pickAttackingSpell(Integer id) {
+        return attackingSpells.get(id);
+    }
+
 
     private Spell pickRecoverySpell(int id) {
         return recoverySpells.get(id);
@@ -149,9 +158,7 @@ public class SelectionAction {
         }
     }
 
-    public Spell pickAttackingSpell(Integer id) {
-        return attackingSpells.get(id);
-    }
+
 
 
     public void showAttackingSpells() {

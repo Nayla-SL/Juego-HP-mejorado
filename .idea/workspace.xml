@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb4303b4-4963-4c80-816a-465711127def" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ar/com/ada/online/second/tp1/AttackSpell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ar/com/ada/online/second/tp1/AttackSpell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ar/com/ada/online/second/tp1/Elf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ar/com/ada/online/second/tp1/Elf.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ar/com/ada/online/second/tp1/GameAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ar/com/ada/online/second/tp1/GameAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ar/com/ada/online/second/tp1/HealingSpell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ar/com/ada/online/second/tp1/HealingSpell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ar/com/ada/online/second/tp1/RecoverySpell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ar/com/ada/online/second/tp1/RecoverySpell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ar/com/ada/online/second/tp1/SelectionAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ar/com/ada/online/second/tp1/SelectionAction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ar/com/ada/online/second/tp1/Spell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ar/com/ada/online/second/tp1/Spell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ar/com/ada/online/second/tp1/Wizard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ar/com/ada/online/second/tp1/Wizard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,14 +68,18 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="552" y="178" width="816" height="729" key="#Intentions" timestamp="1609871431659">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="178" width="816" height="729" key="#Intentions/0.0.1920.1040@0.0.1920.1040" timestamp="1609871431659" />
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1609806359296">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609806359296" />
-    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser" timestamp="1609807076407">
+    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser" timestamp="1609881688374">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1609807076407" />
+    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1609881688374" />
     <state x="1414" y="123" key="#xdebugger.evaluate" timestamp="1609811032527">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -81,38 +88,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1609806274548" />
-    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1609811398049">
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom" timestamp="1609885763800">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1609811398049" />
-    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1609811398049">
+    <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1609885763800" />
+    <state width="1877" height="348" key="GridCell.Tab.0.center" timestamp="1609885763800">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1609811398049" />
-    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1609811398048">
+    <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1609885763800" />
+    <state width="1877" height="348" key="GridCell.Tab.0.left" timestamp="1609885763800">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1609811398048" />
-    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1609811398049">
+    <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1609885763800" />
+    <state width="1877" height="348" key="GridCell.Tab.0.right" timestamp="1609885763800">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1609811398049" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1609811398049">
+    <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1609885763800" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1609885739295">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1609811398049" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1609811398049">
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1609885739295" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1609885739295">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1609811398049" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1609811398049">
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1609885739295" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1609885739294">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1609811398049" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1609811398049">
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1609885739294" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1609885739295">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1609811398049" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1609885739295" />
     <state x="440" y="94" key="SettingsEditor" timestamp="1609806841856">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -131,18 +138,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/ar/com/ada/online/second/tp1/GameAction.java</url>
-          <line>137</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ar/com/ada/online/second/tp1/GameAction.java</url>
-          <line>75</line>
+          <line>78</line>
           <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/ar/com/ada/online/second/tp1/SelectionAction.java</url>
-          <line>46</line>
-          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

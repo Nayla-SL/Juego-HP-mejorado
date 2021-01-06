@@ -6,7 +6,6 @@ public class Wizard extends Character {
     protected Wand wand;
     protected boolean darkWizard;
 
-    //constructor
 
     SelectionAction selectionAction = new SelectionAction();
     Spell spell = new Spell();
@@ -193,10 +192,12 @@ public class Wizard extends Character {
                 darkWizard);
         String spellsTxt = "\n";
         for (int i = 0; i < spells.size(); i++) {
-            spellsTxt = "\t" + spellsTxt + (i + 1) + ") " + spells.get(i).toString();
+            spellsTxt = spellsTxt + spells.get(i).toString() + "\n";
         }
         output = output + spellsTxt + "\n";
         return output;
     }
+
+
 }
 
