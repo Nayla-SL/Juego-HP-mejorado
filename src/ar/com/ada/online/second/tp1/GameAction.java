@@ -19,9 +19,11 @@ public class GameAction {
 
     //player 2 starts and chooses their attributes and spells
     public Character startPlayer2() {
+        System.out.println("-----------------------------------------------------------------------------------------");
         System.out.println("Player 2, you choose:");
         Character player2 = selectionAction.selectionPart();
         System.out.println("Player 2 information: \n" + player2);
+        System.out.println("-----------------------------------------------------------------------------------------");
         return player2;
     }
 
@@ -31,16 +33,22 @@ public class GameAction {
     public void gamePlay(Character player1, Character player2) {
 
         Scanner keyboard = new Scanner(System.in);
-        while (player1.isAlive() || player2.isAlive()) {
+
+        while (player1.isAlive() && player2.isAlive()) {
+            System.out.println("Player 1, you play:");
             castSpell(player1, player2, keyboard);
-            changeLocation(player1, keyboard);
-            playerCurrentStatus(player1);
-        }
-        while (player1.isAlive() || player2.isAlive()) {
-            castSpell(player2, player1, keyboard);
-            changeLocation(player2, keyboard);
-            playerCurrentStatus(player2);
-        }
+            if (player2.isAlive()) {
+                changeLocation(player1, keyboard);
+                System.out.println(playerCurrentStatus(player1));
+            }
+                System.out.println("Player 2, you play:");
+                castSpell(player2, player1, keyboard);
+                if (player1.isAlive()) {
+                    changeLocation(player2, keyboard);
+                    System.out.println(playerCurrentStatus(player2));
+                }
+            }
+        
         winner(player1, player2);
     }
 
@@ -171,13 +179,14 @@ public class GameAction {
                     if (locationOpponent == otherPlayer.getLocation()) {
                         otherPlayer.setLifeSpan(otherPlayer.getLifeSpan() - attackSpell.getDamageMade());
                         System.out.println("Great! You hit your target.");
-                    } else {
-                        System.out.println("Sorry, you didn't hit your target, better luck next time!");
                     }
+                } else {
+                    System.out.println("Sorry, you didn't hit your target, better luck next time!");
                 }
             }
         }
     }
+
 
     //-----------------------------------------------------------------------------------------------------------------
 
@@ -199,7 +208,7 @@ public class GameAction {
     //shows the current status to the player at the end of the turn
     public String playerCurrentStatus(Character userPlaying) {
         String output = String.format(
-                "Here's your status: \n\t Name: %d \n\t Location: %s \n\t Life span: %d \n\t Magic energy: %d \n",
+                "Here's your status: \n\t Name: %s \n\t Location: %s \n\t Life span: %d \n\t Magic energy: %d \n",
                 userPlaying.getName(),
                 userPlaying.getLocation(),
                 userPlaying.getLifeSpan(),

@@ -46,7 +46,8 @@ public class SelectionAction {
 
         for (int i = 0; i < 6; i++) {
             boolean aux = true;
-            while (aux) {
+            boolean changeType = false;
+            while (aux && !changeType) {
                 System.out.println("Choose:\n\t  1 - Attacking Spells \n\t 2 - Healing Spells \n\t 3 - Recovery Spells");
                 typeSpellInput = keyboard.nextInt();
                 switch (typeSpellInput) {
@@ -61,7 +62,7 @@ public class SelectionAction {
                         break;
 
                     case 3: //recovery spells
-                        choosingRecoverySpells(chosenSpells, typeSpellInput, keyboard, aux);
+                        changeType = (choosingRecoverySpells(chosenSpells, typeSpellInput, keyboard, aux));
                         aux = false;
                         break;
 
@@ -76,23 +77,26 @@ public class SelectionAction {
     // -----------------------------------------------------------------------------------------------------------------
 
     //shows every recovery spell available and let's the player choose one spell
-    private void choosingRecoverySpells(List<Spell> chosenSpells, int typeSpellInput, Scanner keyboard, boolean aux) {
+    private boolean choosingRecoverySpells(List<Spell> chosenSpells, int typeSpellInput, Scanner keyboard, boolean aux) {
         System.out.println("Choose one of the following recovery spells:");
         showRecoverySpells();
         System.out.printf("\n\n Your choice: ");
         Integer spellInput = keyboard.nextInt();
-        while (!checkValidInput(spellInput, typeSpellInput, chosenSpells)) {
-            System.out.print("You must choose a valid option, choose again, or insert 0 to choose another type of spell. \n Your choice: ");
+        boolean changeType = false;
+        if (!checkValidInput(spellInput, typeSpellInput, chosenSpells)) {
+            System.out.print("You must choose a valid option. Choose again, or insert 0 to choose another type of spell. \n Your choice: ");
             spellInput = keyboard.nextInt();
             if (spellInput == 0) {
-                aux = true;
+                changeType = true;
+            }
+            if (spellInput != 0) {
+                chosenSpells.add(pickRecoverySpell(spellInput));
+                changeType = false;
             }
         }
-        if (spellInput != 0) {
-            chosenSpells.add(pickRecoverySpell(spellInput));
-            aux = false;
-        }
+        return changeType;
     }
+
 
     //shows every healing spell available and let's the player choose one spell
     private void choosingHealingSpells(List<Spell> chosenSpells, int typeSpellInput, Scanner keyboard, boolean aux) {

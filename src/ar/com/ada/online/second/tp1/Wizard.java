@@ -132,6 +132,8 @@ public class Wizard extends Character {
             if (this.spells.get(i) instanceof AttackSpell) {
                 AttackSpell attackSpell = (AttackSpell) this.spells.get(i);
                 attackSpell.setDamageMade(attackSpell.getDamageMade() + 10 + wand.getPoints());
+                if (attackSpell.getDamageMade() > 100 )
+                {attackSpell.setDamageMade(100);}
                 if (this.spells.get(i) instanceof HealingSpell) {
                     HealingSpell healingSpell = (HealingSpell) this.spells.get(i);
                     healingSpell.setLifeRecovered(healingSpell.getLifeRecovered() - 10);
@@ -149,6 +151,8 @@ public class Wizard extends Character {
             if (this.spells.get(i) instanceof AttackSpell) {
                 AttackSpell attackSpell = (AttackSpell) this.spells.get(i);
                 attackSpell.setDamageMade(attackSpell.getDamageMade() + wand.getPoints());
+                if (attackSpell.getDamageMade() > 100 )
+                {attackSpell.setDamageMade(100);}
             }
         }
     }
